@@ -63,7 +63,7 @@ const getNotesByIdHandler = (request, h) => {
 
     const response = h.response({
         status : "fail",
-        message : "Catatan tidak tidak ditemukan",
+        message : "Catatan tidak ditemukan",
     });
     response.code(404);
     return response;
@@ -108,7 +108,7 @@ const deleteNoteByIdHandler = (request, h) => {
     if (index !== undefined) {
         notes.splice(index,1);
         const response = h.response({
-            statrus : 'success',
+            status : 'success',
             message : 'Catatan berhasil dihapus'
         })
 
@@ -117,7 +117,7 @@ const deleteNoteByIdHandler = (request, h) => {
     }
 
     const response = h.response({
-        status : 'success',
+        status : 'fail',
         message : 'Gagal menghapus catatan. Id tidak ditemukan'
     });
 
